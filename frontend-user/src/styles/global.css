@@ -1,0 +1,17 @@
+/* Global CSS for the entire app */
+body {
+  margin: 0;
+  padding: 0;
+  background: #111;     /* Optional dark background */
+  color: #fff;          /* Optional default text color */
+  font-family: Arial, Helvetica, sans-serif;
+
+  padding-top: 80px;    /* IMPORTANT: fixes navbar overlap */
+}
+
+/* Global container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}

@@ -1,0 +1,156 @@
+/* ================= PAGE ================= */
+.cart-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  color: #f9fafb;
+}
+
+.cart-page-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ================= SECTION TITLES ================= */
+.cart-title {
+  font-size: 22px;
+  margin: 25px 0 10px;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 6px;
+}
+
+/* ================= EMPTY ================= */
+.cart-empty {
+  color: #9ca3af;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+/* ================= CART ITEM ================= */
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+  gap: 16px;
+}
+
+/* ================= IMAGE ================= */
+.cart-book-img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #000;
+}
+
+/* ================= INFO ================= */
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-info h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.cart-author {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* ================= QTY CONTROLS ================= */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.qty-controls button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.qty-controls span {
+  min-width: 60px;
+  text-align: center;
+}
+
+/* ================= SUBTOTAL ================= */
+.cart-subtotal {
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+/* ================= REMOVE ================= */
+.cart-remove-btn {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  height: fit-content;
+}
+
+/* ================= SUMMARY ================= */
+.cart-summary {
+  text-align: right;
+  margin: 10px 0 20px;
+  font-size: 18px;
+}
+
+/* ================= GRAND TOTAL ================= */
+.cart-grand-total {
+  background: #020617;
+  border: 1px solid #1f2937;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: right;
+  margin-top: 30px;
+}
+
+.cart-grand-total h2 {
+  margin-bottom: 10px;
+}
+
+/* ================= CHECKOUT ================= */
+.cart-checkout-btn {
+  background: transparent;
+  border: none;
+  margin-top: 10px;
+}
+
+/* ================= LOADING ================= */
+.cart-loading {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 18px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-remove-btn {
+    align-self: flex-end;
+  }
+
+  .cart-summary,
+  .cart-grand-total {
+    text-align: left;
+  }
+}

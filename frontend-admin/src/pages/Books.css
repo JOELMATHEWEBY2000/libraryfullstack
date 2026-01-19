@@ -1,0 +1,201 @@
+/* ===============================
+   GLOBAL PAGE
+================================ */
+.books-page {
+  padding: 20px;
+  background: #0f172a; /* dark slate */
+  min-height: 100vh;
+  color: #e5e7eb;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.books-page h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.books-page h2 {
+  font-size: 20px;
+  margin: 20px 0 10px;
+  color: #e5e7eb;
+}
+
+/* ===============================
+   ADD BOOK FORM
+================================ */
+.add-book-form {
+  background: #020617;
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.add-book-form input[type="text"],
+.add-book-form input[type="number"],
+.add-book-form input[type="file"] {
+  padding: 10px;
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #e5e7eb;
+}
+
+.add-book-form input::placeholder {
+  color: #94a3b8;
+}
+
+.add-book-form button {
+  grid-column: span 2;
+  padding: 12px;
+  background: #22c55e;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #022c22;
+}
+
+.add-book-form button:hover {
+  background: #16a34a;
+}
+
+/* ===============================
+   BOOK TABLE
+================================ */
+.books-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: #020617;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.books-table th,
+.books-table td {
+  padding: 12px;
+  text-align: center;
+}
+
+.books-table thead {
+  background: #020617;
+  color: #38bdf8;
+}
+
+.books-table tr {
+  border-bottom: 1px solid #1e293b;
+}
+
+.books-table tr:hover {
+  background: #020617;
+}
+
+.books-table img {
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ===============================
+   TABLE BUTTONS
+================================ */
+.btn-edit {
+  background: #38bdf8;
+  color: #020617;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  background: #0ea5e9;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+/* ===============================
+   EDIT MODAL
+================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.edit-modal {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  background: #020617;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  z-index: 1000;
+}
+
+.edit-modal h2 {
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.edit-modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #e5e7eb;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-save {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.modal-cancel {
+  background: #64748b;
+  color: white;
+}
+
+.modal-save:hover {
+  background: #16a34a;
+}
+
+.modal-cancel:hover {
+  background: #475569;
+}

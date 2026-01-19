@@ -1,0 +1,191 @@
+/* =========================
+   DASHBOARD WRAPPER
+========================= */
+.dashboard {
+  padding: 24px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* =========================
+   INSIGHT CARDS
+========================= */
+.dashboard .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Card base */
+.dashboard .card {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover */
+.dashboard .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Card content */
+.dashboard .card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Card title */
+.dashboard .card-title {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Card value */
+.dashboard .card span {
+  font-size: 22px;
+  color: #2563eb;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.card-title {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   SECTION CARDS
+========================= */
+.dashboard .section-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.dashboard .section-card h3 {
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .dashboard .card span {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   GRIDS
+========================= */
+.dashboard .chart-grid,
+.dashboard .table-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   TABLE STYLES (SCOPED)
+========================= */
+.dashboard table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* TABLE HEADER */
+.dashboard th {
+  text-align: left;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;          /* darker for contrast */
+  background: #ffffff;    /* pure white */
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* TABLE BODY */
+.dashboard td {
+  padding: 12px;
+  font-size: 14px;
+  color: #1f2937;
+  background: #ffffff;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+/* ROW HOVER */
+.dashboard tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* REMOVE LAST BORDER */
+.dashboard tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================
+   LINK STYLES (FIXED)
+========================= */
+.dashboard a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dashboard a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   STATES
+========================= */
+.dashboard .danger {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .dashboard .chart-grid,
+  .dashboard .table-grid {
+    grid-template-columns: 1fr;
+  }
+}

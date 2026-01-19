@@ -1,0 +1,23 @@
+.checkout-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  color: white;
+}
+
+.payment-section button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.pay-btn {
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+}
+
+.pay-btn.stripe {
+  background: #635bff;
+}
