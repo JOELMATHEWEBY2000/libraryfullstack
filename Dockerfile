@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ .
 
-CMD ["gunicorn", "library_backend.wsgi:application", "--bind", "0.0.0.0:$PORT"]
+CMD gunicorn library_backend.wsgi:application --bind 0.0.0.0:$PORT
