@@ -1,8 +1,8 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import useAuth from "../context/authStore";
 
-export default function AppLayout({ children }) {
+export default function AppLayout() {
   const location = useLocation();
   const { token } = useAuth();
 
@@ -13,7 +13,7 @@ export default function AppLayout({ children }) {
   return (
     <>
       {!hideNavbar && token && <Navbar />}
-      {children}
+      <Outlet />
     </>
   );
 }
