@@ -4,11 +4,10 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
 COPY . .
+
+WORKDIR /app/backend
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD python manage.py migrate && \
     python manage.py collectstatic --noinput && \
