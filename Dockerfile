@@ -10,4 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD python manage.py migrate && gunicorn library_backend.wsgi
+CMD python manage.py migrate && \
+    python manage.py collectstatic --noinput && \
+    gunicorn library_backend.wsgi
