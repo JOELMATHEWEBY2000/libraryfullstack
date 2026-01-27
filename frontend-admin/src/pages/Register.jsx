@@ -13,6 +13,7 @@ export default function Register() {
     full_name: "",
     phone: "",
     password: "",
+    role: "admin",
   });
 
   const submit = async (e) => {

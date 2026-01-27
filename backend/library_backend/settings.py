@@ -70,7 +70,36 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://libraryfullstack-jf8r.vercel.app",  # user frontend
+    "https://libraryfullstack-rho.vercel.app",   # admin frontend
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_HEADERS = [
+    "authorization",
+    "content-type",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://libraryfullstack-jf8r.vercel.app",
+    "https://libraryfullstack-rho.vercel.app",
+]
+
+CORS_ALLOW_ALL_ORIGINS = False
+
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (

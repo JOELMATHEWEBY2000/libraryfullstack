@@ -108,6 +108,11 @@ class UsersListView(generics.ListAPIView):
     serializer_class = UserBasicSerializer
     permission_classes = [AllowAny]
 
+class AdminListView(generics.ListAPIView):
+    queryset = User.objects.filter(role="admin")
+    serializer_class = UserBasicSerializer
+    permission_classes = [AllowAny]
+
 # -------------------------
 # UPDATE USER STATUS
 # -------------------------
