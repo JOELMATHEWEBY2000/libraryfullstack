@@ -60,45 +60,38 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
-    'django.middleware.security.SecurityMiddleware',
+    "django.middleware.common.CommonMiddleware",
+
+    "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
 
 CORS_ALLOWED_ORIGINS = [
     "https://libraryfullstack-jf8r.vercel.app",  # user frontend
     "https://libraryfullstack-rho.vercel.app",   # admin frontend
 ]
 
+# CORS
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = ["*"]
+CORS_ALLOW_METHODS = ["*"]
 
-CORS_ALLOW_HEADERS = [
-    "authorization",
-    "content-type",
-    "x-csrftoken",
-    "x-requested-with",
-]
-
-CORS_ALLOW_METHODS = [
-    "GET",
-    "POST",
-    "PUT",
-    "PATCH",
-    "DELETE",
-    "OPTIONS",
-]
-
+# CSRF
 CSRF_TRUSTED_ORIGINS = [
     "https://libraryfullstack-jf8r.vercel.app",
     "https://libraryfullstack-rho.vercel.app",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
+# Hosts
+ALLOWED_HOSTS = ["*"]
+
 
 
 REST_FRAMEWORK = {
@@ -213,4 +206,4 @@ MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_FULL_URL = os.environ.get("MEDIA_FULL_URL", "")
 
 
-ALLOWED_HOSTS = ["*", "127.0.0.1", "localhost"]
+
