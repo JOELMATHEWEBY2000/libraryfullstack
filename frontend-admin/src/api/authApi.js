@@ -3,7 +3,7 @@ import API from "./axiosClient";
 const authApi = {
   // REGISTER
   register: (data) =>
-    API.post("auth/register/create/", data),
+    API.post("auth/register/admin/create/", data),
 
   // LOGIN
   login: (data) =>

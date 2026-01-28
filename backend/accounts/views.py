@@ -9,6 +9,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .models import User, UserActivity
 from .serializers import (
     RegisterSerializer,
+    AdminRegisterSerializer,
     UserBasicSerializer,
     UserDetailSerializer,
 )
@@ -28,6 +29,18 @@ class RegisterCreateView(generics.CreateAPIView):
             user=user,
             action="User registered"
         )
+
+class AdminRegisterCreateView(generics.CreateAPIView):
+    permission_classes = [AllowAny]
+    serializer_class = AdminRegisterSerializer
+
+    def perform_create(self, serializer):
+        user = serializer.save()
+        UserActivity.objects.create(
+            user=user,
+            action="User registered"
+        )
+
 
 
 # -------------------------
@@ -109,9 +122,12 @@ class UsersListView(generics.ListAPIView):
     permission_classes = [AllowAny]
 
 class AdminListView(generics.ListAPIView):
-    queryset = User.objects.filter(role="admin")
     serializer_class = UserBasicSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return User.objects.filter(role__in=["admin", "superadmin"])
+
 
 # -------------------------
 # UPDATE USER STATUS
