@@ -123,7 +123,7 @@ class UsersListView(generics.ListAPIView):
 
 class AdminListView(generics.ListAPIView):
     serializer_class = UserBasicSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get_queryset(self):
         return User.objects.filter(role__in=["admin", "superadmin"])

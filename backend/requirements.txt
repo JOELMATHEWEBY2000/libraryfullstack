@@ -33,3 +33,7 @@ python-dateutil==2.9.0.post0
 asgiref==3.9.1
 sqlparse==0.5.3
 tzdata==2025.2
+
+cloudinary
+django-cloudinary-storage
+

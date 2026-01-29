@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "corsheaders",
     "whitenoise.runserver_nostatic",
+    "cloudinary",
+    "cloudinary_storage",
 
     # Apps
     "accounts",
@@ -118,7 +120,13 @@ REST_FRAMEWORK = {
     ),
 }
 
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
+}
 
 
 AUTHENTICATION_BACKENDS = [
@@ -155,7 +163,7 @@ WSGI_APPLICATION = 'library_backend.wsgi.application'
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
-if DATABASE_URL:
+if DATABASE_URL and DATABASE_URL.startswith(("postgres://", "postgresql://")):
     DATABASES = {
         "default": dj_database_url.config(
             default=DATABASE_URL,
@@ -216,9 +224,9 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
-MEDIA_FULL_URL = os.environ.get("MEDIA_FULL_URL", "")
+#MEDIA_URL = "/media/"
+#MEDIA_ROOT = BASE_DIR / "media"
+#MEDIA_FULL_URL = os.environ.get("MEDIA_FULL_URL", "")
 
 
 
