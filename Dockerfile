@@ -7,7 +7,8 @@ WORKDIR /app
 COPY . .
 
 WORKDIR /app/backend
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
 
 CMD python manage.py migrate && \
     python manage.py collectstatic --noinput && \
