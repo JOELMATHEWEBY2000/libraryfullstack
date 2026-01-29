@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 class Book(models.Model):
     title = models.CharField(max_length=250)
@@ -9,7 +10,12 @@ class Book(models.Model):
     rental_price_per_day = models.DecimalField(max_digits=10, decimal_places=2)
     stock_quantity = models.IntegerField()
     rented_quantity = models.IntegerField()
-    cover_image = models.ImageField(upload_to="books/", null=True, blank=True)
+    cover_image = CloudinaryField(
+        "image",
+        folder="books",
+        blank=True,
+        null=True
+    )
 
     def __str__(self):
         return self.title
