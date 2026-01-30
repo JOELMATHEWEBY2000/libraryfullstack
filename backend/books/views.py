@@ -10,6 +10,8 @@ from django.db.models import Q
 from .models import Book
 from .serializers import BookSerializer
 
+from django.core.files.storage import default_storage
+from rest_framework.decorators import action
 
 # --------------------------------------------------------
 # LIST + RETRIEVE – GET /api/books/view/
@@ -18,6 +20,12 @@ class BookViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [AllowAny]
+
+    @action(detail=False, methods=["get"])
+    def storage_check(self, request):
+        return Response({
+            "storage": str(default_storage.__class__)
+        })
 
 class BookListView(APIView):
     permission_classes = [AllowAny]
@@ -70,4 +78,5 @@ class BookUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = BookSerializer
     parser_classes = [MultiPartParser, FormParser]
     permission_classes = [AllowAny]
+
 
