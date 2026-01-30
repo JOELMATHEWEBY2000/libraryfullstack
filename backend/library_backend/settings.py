@@ -129,6 +129,10 @@ STORAGES = {
     },
 }
 
+from django.core.files.storage import default_storage
+print("STORAGE:", default_storage.__class__)
+
+
 
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME"),
